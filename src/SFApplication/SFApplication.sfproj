@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\..\..\nuget\packages\Microsoft.VisualStudio.Azure.Fabric.MSBuild.1.2.0\build\Microsoft.VisualStudio.Azure.Fabric.Application.props" Condition="Exists('..\..\..\..\nuget\packages\Microsoft.VisualStudio.Azure.Fabric.MSBuild.1.2.0\build\Microsoft.VisualStudio.Azure.Fabric.Application.props')" />
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>98cc7982-a911-4077-bd4c-c4854a6b4973</ProjectGuid>
+    <ProjectVersion>1.2</ProjectVersion>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ApplicationPackageRoot\ApplicationManifest.xml" />
+    <None Include="ApplicationParameters\Cloud.xml" />
+    <None Include="ApplicationParameters\Local.1Node.xml" />
+    <None Include="ApplicationParameters\Local.5Node.xml" />
+    <None Include="PublishProfiles\Cloud.xml" />
+    <None Include="PublishProfiles\Local.1Node.xml" />
+    <None Include="PublishProfiles\Local.5Node.xml" />
+    <None Include="Scripts\Deploy-FabricApplication.ps1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ApplicationPackageRoot\NginxPoCPkg\ApplicationManifest.overrides.xml" />
+    <Content Include="ApplicationPackageRoot\NginxPoCPkg\Code\contrib\geo2nginx.pl" />
+    <Content Include="ApplicationPackageRoot\NginxPoCPkg\Code\contrib\unicode2nginx\unicode-to-nginx.pl" />
+    <Content Include="ApplicationPackageRoot\NginxPoCPkg\Code\contrib\vim\ftdetect\nginx.vim" />
+    <Content Include="ApplicationPackageRoot\NginxPoCPkg\Code\contrib\vim\indent\nginx.vim" />
+    <Content Include="ApplicationPackageRoot\NginxPoCPkg\Code\contrib\vim\syntax\nginx.vim" />
+    <Content Include="ApplicationPackageRoot\NginxPoCPkg\Code\docs\CHANGES.ru" />
+    <Content Include="ApplicationPackageRoot\NginxPoCPkg\Code\docs\OpenSSL.LICENSE" />
+    <Content Include="ApplicationPackageRoot\NginxPoCPkg\Code\docs\PCRE.LICENCE" />
+    <Content Include="ApplicationPackageRoot\NginxPoCPkg\Code\docs\zlib.LICENSE" />
+    <Content Include="ApplicationPackageRoot\NginxPoCPkg\Code\en-us\Microsoft.ServiceFabric.Internal.Strings.resources.dll" />
+    <Content Include="ApplicationPackageRoot\NginxPoCPkg\Code\html\50x.html" />
+    <Content Include="ApplicationPackageRoot\NginxPoCPkg\Code\html\index.html" />
+    <Content Include="ApplicationPackageRoot\NginxPoCPkg\Code\logs\placeholder.txt" />
+    <Content Include="ApplicationPackageRoot\NginxPoCPkg\Code\Microsoft.ServiceFabric.Data.dll" />
+    <Content Include="ApplicationPackageRoot\NginxPoCPkg\Code\Microsoft.ServiceFabric.Data.Interfaces.dll" />
+    <Content Include="ApplicationPackageRoot\NginxPoCPkg\Code\Microsoft.ServiceFabric.Data.Interfaces.xml" />
+    <Content Include="ApplicationPackageRoot\NginxPoCPkg\Code\Microsoft.ServiceFabric.Data.xml" />
+    <Content Include="ApplicationPackageRoot\NginxPoCPkg\Code\Microsoft.ServiceFabric.Internal.dll" />
+    <Content Include="ApplicationPackageRoot\NginxPoCPkg\Code\Microsoft.ServiceFabric.Internal.Strings.dll" />
+    <Content Include="ApplicationPackageRoot\NginxPoCPkg\Code\Microsoft.ServiceFabric.Services.dll" />
+    <Content Include="ApplicationPackageRoot\NginxPoCPkg\Code\Microsoft.ServiceFabric.Services.xml" />
+    <Content Include="ApplicationPackageRoot\NginxPoCPkg\Code\nginx-1.11.3.exe" />
+    <Content Include="ApplicationPackageRoot\NginxPoCPkg\Code\Nginx.exe" />
+    <Content Include="ApplicationPackageRoot\NginxPoCPkg\Code\Nginx.exe.config" />
+    <Content Include="ApplicationPackageRoot\NginxPoCPkg\Code\Nginx.pdb" />
+    <Content Include="ApplicationPackageRoot\NginxPoCPkg\Code\ServiceFabricServiceModel.dll" />
+    <Content Include="ApplicationPackageRoot\NginxPoCPkg\Code\setupAcl.cmd" />
+    <Content Include="ApplicationPackageRoot\NginxPoCPkg\Code\System.Fabric.dll" />
+    <Content Include="ApplicationPackageRoot\NginxPoCPkg\Code\System.Fabric.xml" />
+    <Content Include="ApplicationPackageRoot\NginxPoCPkg\Code\temp\placeholder.txt" />
+    <Content Include="ApplicationPackageRoot\NginxPoCPkg\Config\certs\certificate.crt" />
+    <Content Include="ApplicationPackageRoot\NginxPoCPkg\Config\certs\certificate.key" />
+    <Content Include="ApplicationPackageRoot\NginxPoCPkg\Config\conf\fastcgi.conf" />
+    <Content Include="ApplicationPackageRoot\NginxPoCPkg\Config\conf\mime.types" />
+    <Content Include="ApplicationPackageRoot\NginxPoCPkg\Config\conf\nginx.conf" />
+    <Content Include="ApplicationPackageRoot\NginxPoCPkg\Config\Settings.xml" />
+    <Content Include="ApplicationPackageRoot\NginxPoCPkg\ServiceManifest.xml" />
+    <Content Include="ApplicationPackageRoot\RedisPkg\Code\redis-server.exe" />
+    <Content Include="ApplicationPackageRoot\RedisPkg\Code\redis.windows.conf" />
+    <Content Include="ApplicationPackageRoot\RedisPkg\Config\Settings.xml" />
+    <Content Include="ApplicationPackageRoot\RedisPkg\ServiceManifest.xml" />
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Gateway\Gateway.xproj" />
+    <ProjectReference Include="..\IdentityServer\IdentityServer.xproj" />
+    <ProjectReference Include="..\WebApplication\WebApplication.xproj" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
+  <PropertyGroup>
+    <ApplicationProjectTargetsPath>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Service Fabric Tools\Microsoft.VisualStudio.Azure.Fabric.ApplicationProject.targets</ApplicationProjectTargetsPath>
+  </PropertyGroup>
+  <Import Project="$(ApplicationProjectTargetsPath)" Condition="Exists('$(ApplicationProjectTargetsPath)')" />
+  <Import Project="..\..\..\..\nuget\packages\Microsoft.VisualStudio.Azure.Fabric.MSBuild.1.2.0\build\Microsoft.VisualStudio.Azure.Fabric.Application.targets" Condition="Exists('..\..\..\..\nuget\packages\Microsoft.VisualStudio.Azure.Fabric.MSBuild.1.2.0\build\Microsoft.VisualStudio.Azure.Fabric.Application.targets')" />
+</Project>

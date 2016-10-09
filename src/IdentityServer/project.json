@@ -1,0 +1,66 @@
+{
+  "version": "1.0.0-*",
+  "buildOptions": {
+    "outputName": "IdentityServer",
+    "exclude": [
+      "wwwroot",
+      "node_modules",
+      "bower_components"
+    ],
+    "emitEntryPoint": true,
+    "preserveCompilationContext": true
+  },
+  "tooling": {
+    "defaultNamespace": "IdentityServer"
+  },
+
+  "dependencies": {
+    "Microsoft.AspNetCore.Mvc": "1.0.1",
+    "Microsoft.AspNetCore.StaticFiles": "1.0.0",
+    "Microsoft.Extensions.Logging": "1.0.0",
+    "Microsoft.Extensions.Configuration.FileExtensions": "1.0.0",
+    "Microsoft.Extensions.Configuration.Json": "1.0.0",
+    "Serilog.Extensions.Logging": "1.0.0",
+    "Serilog.Sinks.Literate": "2.0.0",
+    "Serilog.Sinks.Seq": "2.0.0",
+    "Microsoft.ServiceFabric": "5.2.207",
+    "Microsoft.ServiceFabric.Services": "2.2.207",
+    "Microsoft.Extensions.Logging.Debug": "1.0.0",
+    "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
+    "Microsoft.Extensions.Configuration.UserSecrets": "1.0.0",
+    "Serilog.Settings.Configuration": "2.0.0",
+    "IdentityServer4": "1.0.0-rc1-update2",
+    "Microsoft.AspNetCore.Hosting": "1.0.0",
+    "Microsoft.AspNetCore.Server.Kestrel": "1.0.1",
+    "Microsoft.AspNetCore.Diagnostics": "1.0.0",
+    "Microsoft.AspNetCore.HttpOverrides": "1.0.0" 
+  },
+  "frameworks": {
+    "net452": {
+      "dependencies": {
+        "System.Net.Http": "4.0.0"
+      },
+      "imports": [
+        "dnxcore50",
+        "portable-net45+win8"
+      ]
+    }
+  },
+  "runtimes": {
+    "win7-x64": {}
+  },
+  "publishOptions": {
+    "include": [
+      "wwwroot",
+      "Views",
+      "Areas/**/Views",
+      "appsettings.json",
+      "hosting.json"
+    ],
+    "exclude": [
+      "**.user",
+      "**.vspscc"
+    ]
+  },
+  "userSecretsId": "aspnet-IdentityServer-20160919103459"
+}

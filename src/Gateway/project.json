@@ -1,0 +1,49 @@
+{
+  "version": "1.0.0-*",
+  "buildOptions": {
+    "emitEntryPoint": true,
+    "preserveCompilationContext": true,
+    "compile": {
+      "exclude": [
+        "PackageRoot"
+      ]
+    },
+    "outputName": "Gateway"
+  },
+
+  "dependencies": {
+    "Microsoft.ServiceFabric.AspNetCore.Gateway": {
+      "target": "project"
+    },
+    "Microsoft.AspNetCore.Server.Kestrel": "1.0.1",
+    "Microsoft.AspNetCore.Server.IISIntegration": "1.0.0",
+    "Microsoft.Extensions.Configuration.EnvironmentVariables": "1.0.0",
+    "Microsoft.Extensions.Configuration.Json": "1.0.0",
+    "Nito.AsyncEx": "3.0.1",
+    "Serilog.Settings.Configuration": "2.0.0",
+    "Serilog.Sinks.Literate": "2.0.0",
+    "Serilog.Sinks.Trace": "2.0.0",
+    "Microsoft.ServiceFabric": "5.2.207",
+    "Microsoft.Extensions.Logging.Console": "1.0.0",
+    "Microsoft.Extensions.Logging.Debug": "1.0.0",
+    "Microsoft.AspNetCore.StaticFiles": "1.0.0"
+  },
+  "publishOptions": {
+    "include": [
+      "appsettings.json"
+    ]
+  },
+
+  "frameworks": {
+    "net452": {
+    }
+  },
+  "runtimes": {
+    "win7-x64": {}
+  },
+  "runtimeOptions": {
+    "configProperties": {
+      "System.GC.Server": true
+    }
+  }
+}
